@@ -9,14 +9,29 @@ public class Mover : MonoBehaviour
     
     void Start()
     {
-        
+        PrintInstructions();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime *moveSpeed;
-        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-        transform.Translate(xValue,0,zValue);
+        MovePlayer();
     }
+
+    private void MovePlayer()
+    {
+        float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+        float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+        transform.Translate(xValue, 0, zValue);
+    }
+
+    void PrintInstructions()
+    {
+        Debug.Log("W,A,S,D or arrow keys to move");
+        Debug.Log("Dont hit any thing");
+
+    }
+
+
 }
+
